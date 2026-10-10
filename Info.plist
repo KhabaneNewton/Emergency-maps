@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+    <!-- ============================================================
+         IZIN LOKASI
+         Teks di bawah ini yang dibaca user di popup izin.
+         Tulis alasannya jelas, kalau tidak App Review akan menolak.
+         ============================================================ -->
+
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Aplikasi membaca posisi GPS Anda dari satelit agar bisa dikirim ke keluarga saat darurat.</string>
+
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Izin "Selalu" membuat posisi tetap terekam walau layar mati dan HP di dalam tas, sehingga titik terakhir Anda selalu tersedia bagi tim penyelamat.</string>
+
+    <!-- Hanya perlu untuk iOS 10 ke bawah, aman ditinggal kalau target iOS 15+ -->
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Izin "Selalu" membuat posisi tetap terekam walau layar mati dan HP di dalam tas.</string>
+
+    <!-- ============================================================
+         BACKGROUND MODE
+         Tanpa baris ini, allowsBackgroundLocationUpdates = true
+         akan langsung crash saat runtime.
+         ============================================================ -->
+
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>location</string>
+    </array>
+
+    <!-- ============================================================
+         AGAR APP TETAP JALAN DI DEVICE TANPA KARTU SIM / TANPA DATA
+         Tidak ada key khusus yang dibutuhkan: GPS tidak lewat jaringan.
+         Yang penting JANGAN menambahkan dependensi network di jalur kritis.
+         ============================================================ -->
+
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>armv7</string>
+        <string>location-services</string>
+        <string>gps</string>
+    </array>
+
+    <!-- Layar tidak perlu menyala terus; biarkan iOS mengunci untuk hemat baterai -->
+    <key>UIApplicationSupportsIndirectInputEvents</key>
+    <true/>
+
+    <key>UILaunchScreen</key>
+    <dict/>
+
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+
+</dict>
+</plist>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pos Pantau — Emergency GPS</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div>
+      <h1>Pos Pantau</h1>
+      <p id="subject">menunggu kabar</p>
+    </div>
+  </div>
+
+  <div class="conn" id="conn">
+    <span class="dot"></span><span id="connText">menyambung…</span>
+  </div>
+
+  <div class="vitals">
+    <div class="vital"><span>Posisi terakhir</span><b id="vPos">—</b></div>
+    <div class="vital"><span>Elevasi</span><b id="vAlt">—</b></div>
+    <div class="vital"><span>Baterai HP</span><b id="vBat">—</b></div>
+    <div class="vital"><span>Kabar terakhir</span><b id="vAge">—</b></div>
+  </div>
+
+  <div class="log-head">
+    <h2>Riwayat posisi</h2>
+    <span id="logCount">0</span>
+  </div>
+
+  <ul class="log" id="log">
+    <li class="empty">Belum ada SMS yang masuk.</li>
+  </ul>
+
+  <div class="tools">
+    <button id="btnSim" class="btn">Simulasikan 1 SMS</button>
+    <button id="btnAuto" class="btn ghost">Mulai aliran otomatis</button>
+    <div class="tools-row">
+      <button id="btnSos" class="btn danger">Simulasi SOS</button>
+      <button id="btnClear" class="btn ghost">Bersihkan</button>
+    </div>
+  </div>
+</aside>
+
+<main class="map-wrap">
+  <div id="map"></div>
+
+  <div class="overlay-top" id="banner" hidden>
+    <strong>Sinyal darurat diterima</strong>
+    <span id="bannerText"></span>
+  </div>
+
+  <div class="legend">
+    <span><i class="sw start"></i>titik awal</span>
+    <span><i class="sw path"></i>jalur tempuh</span>
+    <span><i class="sw live"></i>posisi terakhir</span>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="app.js"></script>
+</body>
+</html>
